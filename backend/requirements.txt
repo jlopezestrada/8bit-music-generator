@@ -3,3 +3,4 @@ sounddevice==0.5.2
 pytest==8.4.1
 pytest-cov==6.2.1
 matplotlib==3.10.3
+scipy==1.16.0
