@@ -8,7 +8,7 @@ def main():
     for note, duration in melody:
         print(f" - {note}, duration: {duration}s")
 
-    save_melody(melody, volume=0.05)
+    save_melody(melody, volume=0.04)
 
 if __name__ == "__main__":
     main()

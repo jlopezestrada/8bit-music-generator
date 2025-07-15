@@ -194,4 +194,4 @@ cython_debug/
 .cursorindexingignore
 
 # 8Bit-Music-Generator
-wav
+generated_melodies
