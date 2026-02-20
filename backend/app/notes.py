@@ -6,6 +6,13 @@ SEMITONES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 def octave_notes_frequency(start_octave: int = 4, end_octave: int = 5) -> list:
     """
     Based on function f = 440 \times 2^{\frac{n}{12}}
+
+    Args:
+        start_octave (int): Starting octave.
+        end_octave (int): Ending octave.
+
+    Returns:
+        dict: Dictionary of note frequencies.
     """
     note_freqs = {}
     for octave in range(start_octave, end_octave + 1):
@@ -18,11 +25,29 @@ def octave_notes_frequency(start_octave: int = 4, end_octave: int = 5) -> list:
     return note_freqs 
 
 def note_to_frequency(note_str: str) -> float:
+    """
+    Convert a note string to its frequency.
+
+    Args:
+        note_str (str): Note string.
+
+    Returns:
+        float: Frequency of the note.
+    """
     _, octave = _parse_note_string(note_str)
     octave_frequencies = octave_notes_frequency(start_octave=octave, end_octave=octave)
     return octave_frequencies[note_str]
 
 def _parse_note_string(note_str: str) -> tuple:
+    """
+    Parse a note string to its note and octave.
+
+    Args:
+        note_str (str): Note string.
+
+    Returns:
+        tuple: Tuple of note and octave.
+    """
     for i in [2, 1]:
         note = note_str[:i]
         if note in SEMITONES:

@@ -2,6 +2,9 @@ from app.generator import generate_melody
 from app.player import save_melody
 
 def main():
+    """
+    Main function to generate and save a melody.
+    """
     print("8-Bit Music Generator")
     melody = generate_melody(length=25, start_octave=3, end_octave=5)
 
