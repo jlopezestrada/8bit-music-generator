@@ -10,6 +10,15 @@ app = FastAPI()
 
 @app.post("/generate", response_model=MelodyResponse)
 def generate_song(params: MelodyRequest):
+    """
+    Generate a song with the given parameters.
+
+    Args:
+        params (MelodyRequest): Parameters for the song generation.
+
+    Returns:
+        MelodyResponse: Response containing the song ID, notes, and WAV URL.
+    """
     melody = generate_melody(
         length=params.length,
         start_octave=params.start_octave,
